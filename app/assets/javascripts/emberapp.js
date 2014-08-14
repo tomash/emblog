@@ -14,3 +14,25 @@ window.App = Ember.Application.create({
   LOG_VIEW_LOOKUPS: true,
   rootElement: '#ember-container'
 });
+
+App.ApplicationStore = DS.Store.extend();
+
+// Override the default adapter with the `DS.ActiveModelAdapter` which
+// is built to work nicely with the ActiveModel::Serializers gem.
+App.ApplicationAdapter = DS.ActiveModelAdapter.extend();
+
+App.Post = DS.Model.extend({
+  title:  DS.attr('string'),
+  body: DS.attr('string')
+});
+
+App.Router.map(function() {
+  this.resource('posts', function() {
+  });
+});
+
+App.PostsIndexRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.find('post');
+  }
+});
