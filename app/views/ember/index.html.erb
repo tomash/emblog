@@ -27,8 +27,8 @@
       <tbody>
         {{#each post in model}}
           <tr>
-            <td>{{post.title }}</td>
-            <td>{{post.body }}</td>
+            <td>{{ post.title }}</td>
+            <td>{{ post.body }}</td>
             <td>SHOW</td>
             <td>EDIT</td>
             <td>DESTROY</td>
@@ -36,6 +36,20 @@
         {{/each}}
       </tbody>
     </table>
+
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="post/index">
+
+    <p>
+      <strong>Title:</strong>
+      {{ title }}
+    </p>
+
+    <p>
+      <strong>Body:</strong>
+      {{ body }}
+    </p>
 
   </script>
 </body>
