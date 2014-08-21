@@ -11,7 +11,15 @@
 <body>
   <div id='ember-container'></div>
 
-   <script type="text/x-handlebars" data-template-name="posts/index">
+  <script type="text/x-handlebars" data-template-name="index">
+    <h1>Ember App Index</h1>
+    <ul>
+      <li>{{#link-to 'posts'}}Posts{{/link-to}}</li>
+    </ul>
+
+  </script>
+
+  <script type="text/x-handlebars" data-template-name="posts/index">
 
     <h1>Listing posts</h1>
 
