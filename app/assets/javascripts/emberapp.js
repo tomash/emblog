@@ -37,6 +37,15 @@ App.Router.map(function() {
 App.PostsIndexRoute = Ember.Route.extend({
   model: function() {
     return this.store.find('post');
+  },
+
+  actions: {
+    deletePost: function(post) {
+      var route = this;
+      post.destroyRecord().then(function(model) {
+        return route.transitionTo('posts');
+      });
+    }
   }
 });
 
