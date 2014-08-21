@@ -28,6 +28,7 @@ App.Post = DS.Model.extend({
 
 App.Router.map(function() {
   this.resource('posts', function() {
+    this.route('new');
     this.resource('post', { path: '/:post_id' }, function() {
     });
   });
