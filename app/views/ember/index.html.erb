@@ -63,5 +63,24 @@
     </p>
 
   </script>
+
+  <script type="text/x-handlebars" data-template-name="posts/new">
+
+    <h1>Create New Post</h1>
+
+    <form {{action createPost on="submit"}}>
+      <div class="field">
+        Title<br>
+        {{input value=title}}
+      </div>
+      <div class="field">
+        Body<br>
+        {{textarea value=body}}
+      </div>
+      <div class="actions">
+        <input type="submit" value="Create Post">
+      </div>
+    </form>
+  </script>
 </body>
 </html>

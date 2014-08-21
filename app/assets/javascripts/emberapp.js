@@ -39,3 +39,9 @@ App.PostsIndexRoute = Ember.Route.extend({
     return this.store.find('post');
   }
 });
+
+App.PostsNewRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.createRecord('post');
+  }
+});
